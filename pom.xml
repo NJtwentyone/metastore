@@ -63,6 +63,34 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- START SEM VAR PLUGIN -->
+      <plugin>
+         <groupId>com.amashchenko.maven.plugin</groupId>
+         <artifactId>gitflow-maven-plugin</artifactId>
+         <version>1.14.0</version>
+         <configuration>
+
+            <installProject>false</installProject>
+            <verbose>false</verbose>
+            <keepBranch>true</keepBranch>
+            <skipTestProject>true</skipTestProject>
+
+            <gitFlowConfig>
+               <productionBranch>semvar-master</productionBranch>
+               <developmentBranch>semvar-develop</developmentBranch>
+               <featureBranchPrefix>semvar-feature/</featureBranchPrefix>
+               <releaseBranchPrefix>semvar-release/</releaseBranchPrefix>
+               <hotfixBranchPrefix>semvar-hotfix/</hotfixBranchPrefix>
+               <versionTagPrefix></versionTagPrefix>
+               <origin>origin</origin>
+            </gitFlowConfig>
+            <commitMessages>
+               <!-- since 1.2.1, see Customizing commit messages -->
+            </commitMessages>
+         </configuration>
+      </plugin>
+      <!-- END SEM VAR PLUGIN -->
     </plugins>
   </build>
 
