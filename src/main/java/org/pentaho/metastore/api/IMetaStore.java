@@ -33,9 +33,9 @@ import org.pentaho.metastore.api.security.MetaStoreElementOwnerType;
  * <p>
  * It can be used to store and retrieve all sorts of data and metadata through a key/value interface which is typed and
  * supports namespaces.
- * 
+ *
  * @author matt
- * 
+ *
  */
 public interface IMetaStore {
 
@@ -48,7 +48,7 @@ public interface IMetaStore {
 
   /**
    * Create a namespace in the metastore
-   * 
+   *
    * @param namespace
    *          the namespace to create
    * @throws MetaStoreException
@@ -60,7 +60,7 @@ public interface IMetaStore {
 
   /**
    * Delete a namespace
-   * 
+   *
    * @param namespace
    *          The namespace to delete
    * @throws MetaStoreException
@@ -73,7 +73,7 @@ public interface IMetaStore {
 
   /**
    * Validate if a namespace exists.
-   * 
+   *
    * @param namespace
    *          The namespace to verify for existance
    * @return True if the namespace exists, false otherwise
@@ -140,7 +140,7 @@ public interface IMetaStore {
 
   /**
    * Create a new element type in the metastore
-   * 
+   *
    * @param namespace
    *          The namespace to create the type in
    * @param elementType
@@ -155,7 +155,7 @@ public interface IMetaStore {
 
   /**
    * Update an element type in the metastore
-   * 
+   *
    * @param namespace
    *          The namespace to update the type in
    * @param elementType
@@ -167,7 +167,7 @@ public interface IMetaStore {
 
   /**
    * Delete an element type from a namespace
-   * 
+   *
    * @param namespace
    *          The namespace to delete the type from
    * @param elementType
@@ -183,7 +183,7 @@ public interface IMetaStore {
 
   /**
    * Retrieve all the elements belonging to an element type
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -197,7 +197,7 @@ public interface IMetaStore {
 
   /**
    * Retrieve all the elements belonging to an element type
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -237,7 +237,7 @@ public interface IMetaStore {
 
   /**
    * Retrieve all the element IDs belonging to a meta store element type
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -250,7 +250,7 @@ public interface IMetaStore {
 
   /**
    * Load the meta store element with the specified namespace, element type ID and element ID
-   * 
+   *
    * @param namespace
    *          The namespace
    * @param elementType
@@ -266,7 +266,7 @@ public interface IMetaStore {
 
   /**
    * Find an element in a namespace with a particular type, using its name
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -303,7 +303,7 @@ public interface IMetaStore {
 
   /**
    * Create a new element for a element type in a namespace
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -320,7 +320,7 @@ public interface IMetaStore {
 
   /**
    * Remove this element from the metastore in the specified namespace and element type.
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -335,7 +335,7 @@ public interface IMetaStore {
 
   /**
    * Update this element in the metastore with the specified namespace and element type.
-   * 
+   *
    * @param namespace
    *          The namespace to reference
    * @param elementType
@@ -352,7 +352,7 @@ public interface IMetaStore {
 
   /**
    * Have the meta store generate a new element type for you in the specified namespace
-   * 
+   *
    * @param namespace
    *          The namespace to create the element type in
    * @return The new element type. To actually create it, use createElementType();
@@ -363,7 +363,7 @@ public interface IMetaStore {
 
   /**
    * Have the meta store generate a new empty element type for you
-   * 
+   *
    * @return A new element, to create it in a element type, use createElement()
    * @throws MetaStoreException
    *           in case something unexpected happens in a bad way.
@@ -372,7 +372,7 @@ public interface IMetaStore {
 
   /**
    * Have the meta store generate a new element for you with specified ID and value.
-   * 
+   *
    * @param elementType
    *          the type of the element to instantiate.
    * @param id
@@ -388,7 +388,7 @@ public interface IMetaStore {
 
   /**
    * Create a new element attribute
-   * 
+   *
    * @param id
    *          The attribute ID
    * @param value
@@ -400,7 +400,7 @@ public interface IMetaStore {
 
   /**
    * Have the meta store generate a new element owner for you with specified name and type.
-   * 
+   *
    * @param name
    *          The owner name
    * @param ownerType
@@ -436,4 +436,11 @@ public interface IMetaStore {
    * @return The password encoder used by the MetaStore.
    */
   public ITwoWayPasswordEncoder getTwoWayPasswordEncoder();
+
+  /**
+   * Dummy method non-breaking api change
+   */
+   public default String getVersion() {
+     return "";
+   }
 }
